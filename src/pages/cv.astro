@@ -1,0 +1,146 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="cv">
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Profile</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    Proud husband and father of 2 👧 with over 9 years in the tech world. Highly skilled in Laravel and Django, I've dedicated nearly a decade to perfecting the craft of web development. Passionate about creating efficient solutions, nurturing family bonds, and continuous learning.
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Education</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="Bachelors Degree in Computer Science"
+      subtitle="2014 at Universidad Metropolitana, Cupey, Puerto Rico"
+    />
+    <TimeLineElement
+      title="High School"
+      subtitle="2008 at Colegio Espiritu Santo, Hato Rey, Puerto Rico"
+    />
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Experience</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Web Developer Freelancer"
+      subtitle="From Ago 2022 to Present, San Juan, PR"
+    >
+    Currently working for various clients in the tech, health, and
+    logistics industries. Delivered various projects with the Laravel
+    framework, MS .Net, and Django in python. Has helped many
+    teams with DevOps operations.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Sr. Web Developer at Axiscare Health Logistics, Inc."
+      subtitle="From Apr 2016 to Ago 2022 at Toa Baja, PR"
+    >
+    Senior Web Developer at a DME Company. Serving as a Full
+    Stack Developer, accomplishing many projects at a very fast
+    pace while giving user support in the Health Industry. All projects
+    implemented in the Laravel framework in PHP with full integration
+    with MS SQL. Implemented the company’s first Code integration
+    tool, GitLab, which is installed internally in the company. All
+    projects are self-hosted, some in the IIS ecosystem (legacy
+    projects), and the most new ones are hosted in Ubuntu with
+    Docker and Kubernetes. Developed various mobile projects in the
+    Ionic Framework with Angular and VueJS.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Developer at Variant"
+      subtitle="From 2015 to 2016 at Variant, San Juan, PR"
+    >
+    Hired as a consultant, served mainly as a Front-End Developer at
+    Hacienda for the Colecturia Virtual App. Worked with many web
+    services in Visual Basic and the .Net Framework and the web
+    forms architecture.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Independent Consultant"
+      subtitle="From 2014 to 2016 at PR"
+    >
+    Helped many startups with various apps among them a group of
+    foodies with a cross-platform app build in the Ionic framework.
+    Designed many videos games amongst them one called Math
+    Combat for a company called Forward Learning. Developed an
+    MVC app in the .Net Framework called Puerto Rico Se Ayuda for
+    Enovae PR.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Developer at Evertec"
+      subtitle="2014 at Cupey, PR"
+    >
+    Served as key member Software Developer in the Business
+    Intelligence Division using technologies including Informatica
+    Powercenter for ETL implementation and Cognos reporting tool.
+    Extracted data from different database environments, such as
+    Oracle and SQL Server, using either PL/SQL or T-SQL ultimately
+    to be loaded to various reporting environments
+    </TimeLineElement>
+    <TimeLineElement
+      title="JR Developer at Pharma Bio-Serve"
+      subtitle="From 2013 t0 2014 at Dorado, PR"
+    >
+    Hired twice as an intern for the former development division
+    called Integratek. Learned to implement projects in the .Net
+    Framework with the web forms architecture. Developed an
+    application called Resume Manager by implementing the
+    knowledge learned and using many stored procedures in MS
+    SQL.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Work/Study at UMET"
+      subtitle="From 2013 at Cupey, PR"
+    >
+    A student with many projects and internships, won various
+    development competitions and Hackathons. Amongst them,
+    Microsoft’s Imagine cup, won second place with a Kinect project
+    for learning sign language with the Kinect.
+    </TimeLineElement>
+  </div>
+
+  <!-- <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Certifications</div>
+  </div>
+
+  <ul class="list-disc mx-6 mb-10 grid gap-2">
+    <li>
+      <a href="#" target="_blank"> Certification Name (with link)</a>
+    </li>
+    <li>
+      <a href="#" target="_blank"> Certification Name (with link)</a>
+    </li>
+  </ul> -->
+
+  <!-- <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Skills</div>
+  </div>
+
+  <ul class="list-disc md:columns-5 columns-2 mx-6">
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+    <li>Skill Name</li>
+  </ul> -->
+</BaseLayout>
