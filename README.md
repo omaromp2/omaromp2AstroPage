@@ -19,3 +19,6 @@ npm run dev
 - [Astro](https://astro.build)
 - [tailwindcss](https://tailwindcss.com/)
 - [DaisyUI](https://daisyui.com/)
+
+## See the page 
+- [Page](https://omaromp2.github.io/omaromp2AstroPage/)
