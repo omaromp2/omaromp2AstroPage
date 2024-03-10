@@ -1,39 +1,39 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow every time you push to the `main` branch
-  # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches: [ main ]
-  # Allows you to run this workflow manually from the Actions tab on GitHub.
+    branches: [main]
   workflow_dispatch:
 
-# Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
   pages: write
   id-token: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v3
-      - name: Install, build, and upload your site
-        uses: withastro/action@v0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-            path: . # The root location of your Astro project inside the repository. (optional)
-            node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
-            package-manager: yarn # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
+          node-version: '16'
+      
+      - name: Install dependencies
+        run: yarn install
+        # If you need to use a specific directory, specify it here with `working-directory: path/to/your/directory`
+      
+      - name: Build the site
+        run: yarn build
+        # Ensure your build script in package.json outputs to the 'dist' directory or adjust the directory in the next step
+      
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages  # The branch the action should deploy to.
+          FOLDER: dist      # The folder the action should deploy.
+          CLEAN: true       # Automatically remove deleted files from the deploy branch
