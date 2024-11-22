@@ -2,7 +2,7 @@
 title: "Install Microsoft Sql Server php drivers in Laravel Sail"
 description: "If you ever have a Laravel Sail container that needs to connect to a mssqlsrv database, this is how you can install the drivers."
 pubDate: "Jan 24 2022"
-heroImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--G4bGM_qi--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i38qlqt8ozigltv6h3u3.png"
+heroImage: "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fi38qlqt8ozigltv6h3u3.png"
 badge: "Laravel"
 ---
 
