@@ -5,7 +5,7 @@ import tailwind from "@astrojs/tailwind";
 import image from "@astrojs/image";
 
 export default defineConfig({
-  site: 'https://omaromp2.github.io/omaromp2AstroPage', // ✅ full project page URL
+  site: 'https://omaromp2.github.io/omaromp2AstroPage',
   base: '/omaromp2AstroPage',
   integrations: [
     mdx(),
@@ -16,5 +16,5 @@ export default defineConfig({
       cacheDir: "./.cache/image",
       logLevel: 'debug',
     }),
-  ]
+  ],
 });
