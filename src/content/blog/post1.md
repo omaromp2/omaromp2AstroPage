@@ -2,7 +2,7 @@
 title: ".NetCore MVC project with Vue components via Vite"
 description: "My approach to installing Vue components using Vite in .NetCore"
 pubDate: "Mar 02 2023"
-heroImage: "https://res.cloudinary.com/practicaldev/image/fetch/s--tAkRnkZy--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3aqn58mr22p8hy7a8qu9.png"
+heroImage: "https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F3aqn58mr22p8hy7a8qu9.png"
 badge: ".netcore"
 ---
 
