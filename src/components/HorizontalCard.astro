@@ -1,5 +1,5 @@
 ---
-const { title, img, desc, url, badge, tags, target = "_blank" } = Astro.props;
+const { title, img, desc, url, badge, tags, target = "_blank", imgClass = "max-w-full md:max-w-[13rem] rounded-lg" } = Astro.props;
 // import { Image } from "@astrojs/image/components";
 import { Image } from "astro:assets";
 ---
@@ -17,7 +17,7 @@ import { Image } from "astro:assets";
             width={750}
             format="webp"
             alt={title}
-            class="max-w-full md:max-w-[13rem] rounded-lg"
+            class={imgClass}
           />
         )
       }
