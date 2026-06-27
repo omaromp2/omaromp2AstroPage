@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
+import { projects, openSourceContributions } from "../data/projects";
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
@@ -12,17 +13,14 @@ const last_posts = posts.slice(0, 3);
   <div class="pb-12 mt-5">
     <div class="text-xl py-1">Hey there 👋</div>
     <div class="text-5xl font-bold">I'm Omar Ponce</div>
-    <div class="text-3xl py-3 font-bold">Dad of 2 👧,husband, and Software Engineer 👨‍💻</div>
+    <div class="text-3xl py-3 font-bold">Dad of 2 👧, husband, and Software Engineer 👨‍💻</div>
     <div class="py-2">
-      <text class="text-lg">
-      Proud husband and father of two. I’m a software engineer from San Juan, Puerto Rico with 10+ years building web apps and integrations—mostly Laravel, .NET, and modern front-ends (Vue & React). 
-     </text>
+      <p class="text-lg">
+      Proud husband and father of two. I'm a software engineer from San Juan, Puerto Rico with 10+ years building web apps and integrations—mostly Laravel, .NET, and modern front-ends (Vue & React).
+     </p>
     </div>
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/omar_omp" target="_blank"> Let's connect!</a>
-      <!-- <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a> -->
+      <a class="btn" href="https://www.linkedin.com/in/omar-ponce-41849a67/" target="_blank"> Let's connect!</a>
     </div>
   </div>
 
@@ -30,71 +28,42 @@ const last_posts = posts.slice(0, 3);
     <div class="text-3xl w-full font-bold mb-2">Some of the latest projects I have worked {"</>"}</div>
   </div>
 
-  <HorizontalCard
-    title="Allec"
-    img="https://static.wixstatic.com/media/deac6a_2d8311aa5ec34fb387a9f6f9f0e471bb~mv2.png/v1/fill/w_277,h_141,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/deac6a_2d8311aa5ec34fb387a9f6f9f0e471bb~mv2.png"
-    desc="ALLEC is an Online Centralized Platform for B2B management in the supply chain and distribution industry. From client on-boarding features to order management, door analytics and warehouse/inventory management."
-    url="https://www.allec.io"
-    badge="Laravel"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Abacrop"
-    img="/omaromp2AstroPage/abacrop_logo.png"
-    desc="Abacrop Agricultural Data Capture solution was created as a need to increase production and expansion capabilities."
-    url="https://abacrop.com/"
-    badge="Django"
-  />
-  <div class="divider my-0"></div>
-  <!-- img="https://img.transistor.fm/Ty6_XirjEiBWEjfgR-BuBQidIz37rym6PYCbAaAUoMM/rs:fill:800:800:1/q:60/aHR0cHM6Ly9pbWct/dXBsb2FkLXByb2R1/Y3Rpb24udHJhbnNp/c3Rvci5mbS80MDIw/Yzg2OTNiMjY3YzE0/NTVhOWZkZjQwZTY1/ZmM2My5qcGc.webp" -->
-  <HorizontalCard
-      title="Urbital Podcast"
-    img="https://urbital.io/wp-content/uploads/2025/11/white-768x166-1.png"
-    desc="Urbital Podcast App"
-    url="https://podcast.urbital.io/"
-    badge="Vue"
-  />
-  <!--<div class="divider my-0"></div>-->
-  <!-- img="/post_img.webp" -->
-  <!--<HorizontalCard-->
-  <!--  title="MaskotaPR-ID"-->
-  <!--  img="https://www.maskotapr-id.com/images/illustrations/maskota.png"-->
-  <!--  desc="Sistema de Registro de Mascotas"-->
-  <!--  url="https://www.maskotapr-id.com/index.php"-->
-  <!--  badge="Laravel"-->
-  <!--/>-->
-
-<div class="divider my-0"></div>
-   <!--img="/post_img.webp" -->
-  <HorizontalCard
-    title="SHPO"
-    img="https://shpoappa5da.blob.core.windows.net/login-templates/assets/gov-shpo-logo.png"
-    desc="Puerto Rico Historical Property Registry"
-    url="https://shpoexternalprod.b2clogin.com/shpoexternalprod.onmicrosoft.com/b2c_1_susi/oauth2/v2.0/authorize?client_id=89bc48c1-d009-45a3-987d-faf796041940&scope=openid%20profile%20offline_access&redirect_uri=https%3A%2F%2Fsubmissions.oech.pr.gov&client-request-id=16358700-4ec7-4d9e-9415-7f632ddd0d34&response_mode=fragment&response_type=code&x-client-SKU=msal.js.browser&x-client-VER=3.2.0&client_info=1&code_challenge=vk9woRpvUlN9jmb3-zclUn9aX_99j33syTe0b9YhrvQ&code_challenge_method=S256&nonce=e69377c6-0027-46e6-832a-958d2b4e9d18&state=eyJpZCI6ImZhMGY3YjliLTgyYTctNDA0OS04MWMyLWIzNThhNWUzOGMyZCIsIm1ldGEiOnsiaW50ZXJhY3Rpb25UeXBlIjoicmVkaXJlY3QifX0%3D"
-    badge=".netcore"
-  />
+  {
+    projects.map((project, i) => (
+      <>
+        <HorizontalCard
+          title={project.title}
+          img={project.img}
+          desc={project.desc}
+          url={project.url}
+          badge={project.badge}
+          imgClass={project.imgClass}
+          target={project.target}
+        />
+        {i < projects.length - 1 && <div class="divider my-0" />}
+      </>
+    ))
+  }
 
   <div>
     <div class="text-3xl w-full font-bold mb-2 mt-10">Open Source Contributions</div>
   </div>
 
-  <HorizontalCard
-    title="Document Number::parse in Helpers"
-    img="/omaromp2AstroPage/laravel-logo.svg"
-    desc="Documented the Number::parse() method in Laravel 13.x docs — usage examples for parsing locale-aware numeric strings and how it relates to parseInt() and parseFloat()."
-    url="https://github.com/laravel/docs/pull/11217"
-    badge="Laravel"
-    imgClass="max-w-full md:max-w-[6rem] rounded-lg"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Document whereNullSafeEquals methods"
-    img="/omaromp2AstroPage/laravel-logo.svg"
-    desc="Documented the whereNullSafeEquals and orWhereNullSafeEquals query builder methods in Laravel 13.x docs with null-safe equality comparison examples."
-    url="https://github.com/laravel/docs/pull/11226"
-    badge="Laravel"
-    imgClass="max-w-full md:max-w-[6rem] rounded-lg"
-  />
+  {
+    openSourceContributions.map((contribution, i) => (
+      <>
+        <HorizontalCard
+          title={contribution.title}
+          img={contribution.img}
+          desc={contribution.desc}
+          url={contribution.url}
+          badge={contribution.badge}
+          imgClass={contribution.imgClass}
+        />
+        {i < openSourceContributions.length - 1 && <div class="divider my-0" />}
+      </>
+    ))
+  }
 
   <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>

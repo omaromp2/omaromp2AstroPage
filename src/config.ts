@@ -3,4 +3,4 @@
 
 export const SITE_TITLE = "Omar Ponce | Personal Portfolio Website";
 export const SITE_DESCRIPTION =
-  "If you like my personal protfolio try Astrofy, is a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS. Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed.";
+  "Omar Ponce — software engineer with 10+ years crafting Laravel, .NET, and modern front-end solutions.";
